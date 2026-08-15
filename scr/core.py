@@ -4,7 +4,7 @@ from typing import ClassVar
 class Settings():
 
     SECRET_KEY: str = "secret"
-    CORS_ORIGINS: ClassVar[list[str]] = ["*"]
+    CORS_ORIGINS: ClassVar[list[str]] = ["http://195.19.209.223/"]
     CORS_ALLOW_HEADERS: ClassVar[list[str]] = ["Content-Type", "Authorization"]
     SESSION_TYPE: str = "filesystem"
     SESSION_COOKIE_SAMESITE: str = "Lax"
