@@ -25,7 +25,7 @@ class UserLogout(Resource):
     def post(self):
         return logout()
 
-api.add_resource(UserLogin, "/login")
-api.add_resource(UserRegister, "/register")
-api.add_resource(UserInfo, "/info")
-api.add_resource(UserLogout, "/logout")
+api.add_resource(UserLogin, "/api/login")
+api.add_resource(UserRegister, "/api/register")
+api.add_resource(UserInfo, "/api/info")
+api.add_resource(UserLogout, "/api/logout")
