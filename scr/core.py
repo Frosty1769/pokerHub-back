@@ -5,7 +5,7 @@ class Settings():
 
     SECRET_KEY: str = "secret"
     CORS_ORIGINS: ClassVar[list[str]] = ["*"]
-    CORS_ALLOW_HEADERS: ClassVar[list[str]] = ["Content-Type"]
+    CORS_ALLOW_HEADERS: ClassVar[list[str]] = ["Content-Type", "Authorization"]
     SESSION_TYPE: str = "filesystem"
     SESSION_COOKIE_SAMESITE: str = "Lax"
     # SESSION_COOKIE_SAMESITE: str = "None"
