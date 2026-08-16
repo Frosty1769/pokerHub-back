@@ -4,10 +4,10 @@ from typing import ClassVar
 class Settings():
 
     SECRET_KEY: str = "secret"
-    CORS_ORIGINS: ClassVar[list[str]] = ["http://195.19.209.223/"]
+    CORS_ORIGINS: ClassVar[list[str]] = ["http://195.19.209.223/", "http://joker-hub.ru/", "https://joker-hub.ru/"]    
     CORS_ALLOW_HEADERS: ClassVar[list[str]] = ["Content-Type", "Authorization"]
     SESSION_TYPE: str = "filesystem"
-    SESSION_COOKIE_SAMESITE: str = "Lax"
+    SESSION_COOKIE_SAMESITE: str = "None"
     # SESSION_COOKIE_SAMESITE: str = "None"
     # SESSION_COOKIE_SECURE: bool = True
     SESSION_COOKIE_SECURE: bool = True
