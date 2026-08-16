@@ -1,20 +1,31 @@
 from flask import Flask
 from flask_cors import CORS
-
-from endpoints import user, game
-
 from db import db
-from scr.core import settings
+from endpoints.auth import auth_bp
+from endpoints.user import user_bp  # ваш существующий
+from config import Config
+import os
 
-app = Flask(__name__)
-app.config.from_object(settings)
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object(Config)
 
+    # Инициализация БД
+    db.init_app(app)
 
-CORS(app, supports_credentials=True, cors_allowed_origins="*")
-db.init_app(app)
+    # CORS - настройте под себя
+    CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-app.register_blueprint(user.bp)
-app.register_blueprint(game.bp)
+    # Регистрация Blueprint'ов
+    app.register_blueprint(auth_bp)
+    app.register_blueprint(user_bp)  # ваш существующий
+
+    # Создание таблиц
+    with app.app_context():
+        db.create_all()
+
+    return app
+
 
 @app.cli.command('reset-db')
 def reset_db_command():
@@ -23,5 +34,9 @@ def reset_db_command():
     db.create_all()
     click.echo('✅ База данных пересоздана!')
 
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app = create_app()
+    app.run(debug=True, host='0.0.0.0', port=5000)
+
+

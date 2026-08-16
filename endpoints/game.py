@@ -14,5 +14,5 @@ class GameInfo(Resource):
     def get(self, _id):
         return get_game_info(_id)
 
-api.add_resource(GameAll, "/games")
-api.add_resource(GameInfo, "/game/<_id>")
+api.add_resource(GameAll, "/api/games")
+api.add_resource(GameInfo, "/api/game/<_id>")

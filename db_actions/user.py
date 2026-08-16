@@ -3,6 +3,37 @@ from flask import jsonify, session
 from db import db
 from model.model import Users
 
+from model.user import User
+from typing import Optional
+
+def get_user_by_telegram_id(telegram_id: str) -> Optional[User]:
+    return User.query.filter_by(telegram_id=telegram_id).first()
+
+def create_or_update_user(telegram_user: dict) -> User:
+    telegram_id = str(telegram_user['id'])
+    user = get_user_by_telegram_id(telegram_id)
+
+    if user:
+        # Обновляем существующего
+        user.username = telegram_user.get('username', user.username)
+        user.first_name = telegram_user.get('first_name', user.first_name)
+        user.last_name = telegram_user.get('last_name', user.last_name)
+        user.photo_url = telegram_user.get('photo_url', user.photo_url)
+        db.session.commit()
+        return user
+
+    # Создаем нового
+    user = User(
+        telegram_id=telegram_id,
+        username=telegram_user.get('username'),
+        first_name=telegram_user.get('first_name', ''),
+        last_name=telegram_user.get('last_name', ''),
+        photo_url=telegram_user.get('photo_url')
+    )
+    db.session.add(user)
+    db.session.commit()
+    return user
+
 def register(username, password):
     _newby = db.session.query(Users).filter(Users.username == username).first()
     

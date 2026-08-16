@@ -1,2 +1,313 @@
+# -------------------------------
+# Python / Flask / PyCharm
+# -------------------------------
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
 .env
-dotenv
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# -------------------------------
+# IDE / Editors
+# -------------------------------
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+.idea_modules/
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.vimrc
+*.vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+
+# -------------------------------
+# Database
+# -------------------------------
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+instance/
+
+# PostgreSQL
+*.pgdata
+*.pgadmin
+
+# MySQL
+*.ibdata1
+*.ibd
+*.frm
+*.MYD
+*.MYI
+
+# Redis
+*.rdb
+*.aof
+
+# -------------------------------
+# Logs & Temporary files
+# -------------------------------
+
+# Logs
+logs/
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.cache
+*.cached
+
+# -------------------------------
+# OS generated files
+# -------------------------------
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+
+# Linux
+*.swp
+*.swo
+*~
+
+# -------------------------------
+# Project specific
+# -------------------------------
+
+# Flask
+flask_session/
+instance/
+
+# Alembic migrations (если используете)
+alembic/*.pyc
+alembic/versions/*.pyc
+alembic/__pycache__/
+
+# JWT / Keys
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Secrets
+*.secret
+*.secrets
+secrets/
+.env.local
+.env.*.local
+.terraform.tfstate
+.terraform.tfstate.lock.info
+.terraform/
+
+# -------------------------------
+# Test & Coverage
+# -------------------------------
+
+.pytest_cache/
+.tox/
+.coverage
+coverage.xml
+*.cover
+.hypothesis/
+htmlcov/
+.jacoco/
+test-results/
+
+# -------------------------------
+# Backups
+# -------------------------------
+
+*.bak
+*.backup
+*.old
+*.orig
+*.rej
+
+# -------------------------------
+# Dependencies (optional - раскомментируйте если нужно)
+# -------------------------------
+
+# Если хотите игнорировать файлы зависимостей (обычно НЕ надо)
+# requirements.txt
+# Pipfile
+# poetry.lock
