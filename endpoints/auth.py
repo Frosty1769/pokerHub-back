@@ -9,7 +9,7 @@ import logging
 auth_bp = Blueprint('auth', __name__, url_prefix='/api/auth')
 logger = logging.getLogger(__name__)
 
-@auth_bp.route('/api/login', methods=['POST'])
+@auth_bp.route('/login', methods=['POST'])
 def login():
     """Вход через Telegram"""
     try:
@@ -43,7 +43,7 @@ def login():
         logger.error(f"Login error: {e}")
         return jsonify({'error': 'Internal server error'}), 500
 
-@auth_bp.route('/api/refresh', methods=['POST'])
+@auth_bp.route('/refresh', methods=['POST'])
 def refresh():
     """Обновление сессии"""
     try:
@@ -83,7 +83,7 @@ def refresh():
         logger.error(f"Refresh error: {e}")
         return jsonify({'error': 'Internal server error'}), 500
 
-@auth_bp.route('/api/logout', methods=['POST'])
+@auth_bp.route('/logout', methods=['POST'])
 @login_required
 def logout():
     """Выход из системы"""
@@ -96,7 +96,7 @@ def logout():
         logger.error(f"Logout error: {e}")
         return jsonify({'error': 'Internal server error'}), 500
 
-@auth_bp.route('/api/me', methods=['GET'])
+@auth_bp.route('/me', methods=['GET'])
 @login_required
 def me():
     """Информация о текущем пользователе"""
