@@ -23,11 +23,11 @@ app.register_blueprint(auth_bp)
 # with app.app_context():
 #     db.create_all()
 
-# logging.basicConfig(
-#     level=logging.INFO,
-#     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-#     handlers=[logging.StreamHandler()]
-# )
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[logging.StreamHandler()]
+)
 # logger = logging.getLogger(__name__)
 
 # @app.before_request
