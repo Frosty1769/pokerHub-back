@@ -29,8 +29,8 @@ class InitData(BaseModel):
     user: TelegramUserData
     auth_date: str
     start_param: Optional[str] = None
-    chat_type: str
-    chat_instance: str
+    chat_type: Optional[str] = None
+    chat_instance: Optional[str] = None
     signature: Optional[str] = None 
     hash: str
     

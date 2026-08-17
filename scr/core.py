@@ -9,7 +9,7 @@ load_dotenv()
 class Settings():
 
     SECRET_KEY: str = os.getenv('SECRET_KEY')
-    CORS_ORIGINS: ClassVar[list[str]] = ["http://195.19.209.223/", "http://joker-hub.ru/", "https://joker-hub.ru/", "http://127.0.0.1/"]    
+    CORS_ORIGINS: ClassVar[list[str]] = ["http://195.19.209.223/", "http://joker-hub.ru/", "https://joker-hub.ru/", "http://localhost:5173/"]    
     CORS_ALLOW_HEADERS: ClassVar[list[str]] = ["Content-Type", "Authorization"]
     SESSION_TYPE: str = "filesystem"
     SESSION_COOKIE_SAMESITE: str = "None"
