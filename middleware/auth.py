@@ -2,6 +2,7 @@ from functools import wraps
 from flask import request, jsonify, g
 from db_actions.session import get_session_by_token
 from db_actions.user import get_user_by_telegram_id
+from db import db
 
 def login_required(f):
     """Декоратор для проверки авторизации"""
