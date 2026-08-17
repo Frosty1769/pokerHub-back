@@ -1,5 +1,6 @@
 from flask import request, jsonify, Blueprint, g
 from schemas.auth import LoginRequest, RefreshRequest, AuthResponse
+from schemas.auth import InitData
 from services.telegram import TelegramService
 from db_actions.user import create_or_update_user
 from db_actions.session import create_session, get_session_by_token, refresh_session, invalidate_session
@@ -20,9 +21,7 @@ def login():
 
         # 1. Валидируем данные Telegram
         init_data = data['initData']
-        logger.info(init_data)
-        logger.info("BOT_TOKEN", settings.BOT_TOKEN)
-        logger.info("SECRET_KEY", settings.SECRET_KEY)
+
         validated_user = TelegramService.validate_init_data(init_data)
 
         # 2. Создаем или обновляем пользователя в БД
