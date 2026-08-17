@@ -14,13 +14,19 @@ class TelegramUserData(BaseModel):
     photo_url: Optional[str] = None
 
 class InitData(BaseModel):
-    query_id: str
+    query_id: Optional[str] = None
     user: TelegramUserData
     auth_date: str
     hash: str
     start_param: Optional[str] = None
     chat_type: Optional[str] = None
     chat_instance: Optional[str] = None
+    signature: Optional[str] = None 
+    
+    class Config:
+        populate_by_name = True
+        extra = 'allow'  # Разрешить дополнительные поля
+
 
     @validator('hash')
     def validate_telegram_hash(cls, v, values):
