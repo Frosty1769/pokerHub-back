@@ -21,7 +21,8 @@ def login():
 
         # 1. Валидируем данные Telegram
         init_data = data['initData']
-
+        logger.debug("init_data")
+        logger.debug(init_data)
         validated_user = TelegramService.validate_init_data(init_data)
 
         # 2. Создаем или обновляем пользователя в БД

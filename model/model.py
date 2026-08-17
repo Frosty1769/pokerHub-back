@@ -6,12 +6,6 @@ import sqlalchemy as sa
 from enums.weapon_spell import AttackType, DamageType, HoldType, SpellType
 
 
-class Users(db.Model):
-    id = db.Column(INTEGER,autoincrement=True, primary_key=True, nullable=False)
-    id_public = db.Column(TEXT(32), nullable=False)
-    username = db.Column(TEXT, nullable=False, unique=True)
-    password = db.Column(TEXT, nullable=False) 
-
 class Games(db.Model):
     id = db.Column(INTEGER,autoincrement=True, primary_key=True, nullable=False)
     id_public = db.Column(TEXT(32), nullable=False)
