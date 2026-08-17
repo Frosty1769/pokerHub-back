@@ -5,6 +5,8 @@ from flask import current_app
 
 class Session(db.Model):
     __tablename__ = 'sessions'
+    __table_args__ = {'extend_existing': True}
+
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False, index=True)

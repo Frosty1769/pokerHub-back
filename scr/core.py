@@ -1,9 +1,14 @@
 from typing import ClassVar
 
+from dotenv import load_dotenv
+import os
+
+# Загружаем переменные из .env
+load_dotenv()
 
 class Settings():
 
-    SECRET_KEY: str = "secret"
+    SECRET_KEY: str = os.getenv('BOT_TOKEN')
     CORS_ORIGINS: ClassVar[list[str]] = ["http://195.19.209.223/", "http://joker-hub.ru/", "https://joker-hub.ru/", "*"]    
     CORS_ALLOW_HEADERS: ClassVar[list[str]] = ["Content-Type", "Authorization"]
     SESSION_TYPE: str = "filesystem"
