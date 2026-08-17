@@ -6,6 +6,7 @@ from endpoints.auth import auth_bp
 import click 
 from scr.core import settings
 import os
+import logging
 
 app = Flask(__name__)
 app.config.from_object(settings)
@@ -21,6 +22,22 @@ app.register_blueprint(auth_bp)
 # Создание таблиц
 # with app.app_context():
 #     db.create_all()
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[logging.StreamHandler()]
+)
+logger = logging.getLogger(__name__)
+
+@app.before_request
+def log_request():
+    app.logger.info(f"📩 {request.method} {request.path} от {request.remote_addr}")
+
+@app.after_request
+def log_response(response):
+    app.logger.info(f"✅ {request.method} {request.path} → {response.status_code}")
+    return response
 
 
 
